@@ -1,18 +1,22 @@
 package web;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Scanner;
 
-public class VisitsCounterServlet extends HttpServlet {
+public class VisitsCounterImageServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private int visitNumber;
     private boolean fileExists;
-    String path = "C:" + File.separator + "Temp"+ File.separator;
+    String path = "C:" + File.separator + "Temp" + File.separator;
 
     public void init() {
         visitNumber = Integer.parseInt(getServletConfig().getInitParameter("visitNumber"));
@@ -31,20 +35,22 @@ public class VisitsCounterServlet extends HttpServlet {
         }
     }
 
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        out.println("<html><head><title>Visits Counter Servlet</title><head>");
-        out.println("<body><h1>Welcome to my page!</h1>");
-        if(fileExists) {
-            visitNumber++;
-            out.println("<p> Your visit number is ");
-            out.println(visitNumber);
-            out.println("</p></body></html>");
+        response.setContentType("image/jpeg");
+        visitNumber++;
+        BufferedImage image = new BufferedImage(1700, 850, BufferedImage.TYPE_INT_RGB);
+        Graphics2D graphics = image.createGraphics();
+        graphics.setFont(new Font("Serif", Font.ITALIC, 80));
+        graphics.setColor(Color.ORANGE);
+        if (fileExists) {
+            graphics.drawString("Welcome to my page!", 100, 200);
+            graphics.drawString("Your visit number is " + visitNumber, 100, 400);
         } else {
-            out.println("<p> Sorry, I can't count your visits :-( </p>");
-            out.println("<p> Try to visit my page from another device </p>");
+            graphics.drawString("Sorry, I can't count your visits :-(", 100, 200);
+            graphics.drawString("Try to visit my page from another device", 100, 400);
         }
+        ServletOutputStream outputStream = response.getOutputStream();
+        ImageIO.write(image, "jpeg", outputStream);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse responce) throws ServletException, IOException {

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="1" author="asherstneva">
+        <sql>
+            CREATE TABLE IF NOT EXISTS expenses (
+            id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            paydate DATE NOT NULL,
+            receiver INT UNSIGNED NULL DEFAULT NULL,
+            value DECIMAL(7,2) NULL DEFAULT NULL
+            )
+        </sql>
+    </changeSet>
+
+    <changeSet id="2" author="asherstneva">
+        <sql>
+            CREATE TABLE IF NOT EXISTS receivers (
+            id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            name VARCHAR(255) NULL DEFAULT NULL
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="3" author="asherstneva">
+        <sql>
+            REPLACE INTO receivers (name)
+            values ('Beltelecom'), ('Vitalur'), ('Korona'), ('MTS')
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

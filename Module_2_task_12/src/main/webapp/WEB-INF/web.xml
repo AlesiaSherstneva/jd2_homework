@@ -5,8 +5,8 @@
          version="3.0" metadata-complete="true">
 
     <servlet>
-        <servlet-name>VisitsCounterServlet</servlet-name>
-        <servlet-class>web.VisitsCounterServlet</servlet-class>
+        <servlet-name>VisitsCounterImageServlet</servlet-name>
+        <servlet-class>web.VisitsCounterImageServlet</servlet-class>
         <init-param>
             <param-name>visitNumber</param-name>
             <param-value>0</param-value>
@@ -14,7 +14,7 @@
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>VisitsCounterServlet</servlet-name>
+        <servlet-name>VisitsCounterImageServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 

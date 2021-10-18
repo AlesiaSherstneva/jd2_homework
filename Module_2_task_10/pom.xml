@@ -3,12 +3,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>Module_2_task_9</groupId>
-    <artifactId>Module_2_task_9</artifactId>
+    <groupId>Module_2_task_10</groupId>
+    <artifactId>Module_2_task_10</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>VisitsCounter</name>
+    <name>Module_2_task_10</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -47,7 +47,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <warFile>target\Module_2_task_9-1.0.war</warFile>
+                    <warFile>target\Module_2_task_10-1.0.war</warFile>
                     <username>tomcat</username>
                     <password>tomcat</password>
                 </configuration>

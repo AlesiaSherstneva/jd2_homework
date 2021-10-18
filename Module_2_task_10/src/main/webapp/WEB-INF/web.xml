@@ -5,17 +5,13 @@
          version="3.0" metadata-complete="true">
 
     <servlet>
-        <servlet-name>VisitsCounterServlet</servlet-name>
-        <servlet-class>web.VisitsCounterServlet</servlet-class>
-        <init-param>
-            <param-name>visitNumber</param-name>
-            <param-value>0</param-value>
-        </init-param>
+        <servlet-name>UserDataServlet</servlet-name>
+        <servlet-class>web.UserDataServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>VisitsCounterServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>UserDataServlet</servlet-name>
+        <url-pattern>/UserDataServlet</url-pattern>
     </servlet-mapping>
 
 </web-app>
