@@ -20,7 +20,7 @@ public class UserDataServlet extends HttpServlet {
             out.println("<body><h1>You didn't enter the name!</h1>");
             out.println("</body></html>");
         } else if (phone.isEmpty() && email.isEmpty()) {
-            out.println("<body><h1>You didn't enter the phone and the email!</h1>");
+            out.println("<body><h1>You didn't enter your phone number and email!</h1>");
             out.println("</body></html>");
         }
         else {
