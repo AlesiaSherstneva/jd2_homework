@@ -12,7 +12,7 @@ public class VisitsCounterServlet extends HttpServlet {
     private int visitNumber;
 
     public void init() {
-        visitNumber = 0;
+        visitNumber = Integer.parseInt(getServletConfig().getInitParameter("visitNumber"));
     }
 
 

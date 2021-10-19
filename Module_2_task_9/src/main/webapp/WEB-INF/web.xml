@@ -7,11 +7,15 @@
     <servlet>
         <servlet-name>VisitsCounterServlet</servlet-name>
         <servlet-class>web.VisitsCounterServlet</servlet-class>
+        <init-param>
+            <param-name>visitNumber</param-name>
+            <param-value>0</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>VisitsCounterServlet</servlet-name>
-        <url-pattern>/test</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
 </web-app>
