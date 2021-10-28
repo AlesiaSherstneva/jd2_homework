@@ -9,11 +9,31 @@ public class DBInsert {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the date of the payment (yyyy-mm-dd):");
-        while (!scanner.hasNext("[0-9]{4}-[0-9]{2}-[0-9]{2}")) {
-            System.out.println("It's wrong date! Enter correct date:");
-            scanner.nextLine();
+        String paydate = "";
+        boolean isCorrectDate = false;
+        while (!isCorrectDate) {
+            while (!scanner.hasNext("[0-9]{4}-[0-9]{2}-[0-9]{2}")) {
+                System.out.println("It's not a date! Enter correct date:");
+                scanner.nextLine();
+            }
+            paydate = scanner.nextLine();
+            int year = Integer.parseInt(paydate.substring(0, 4));
+            int month = Integer.parseInt(paydate.substring(5, 7));
+            int dayOfMonth = Integer.parseInt(paydate.substring(8));
+            if (year < 2016 || year > 2021) {
+                System.out.println("There is wrong year in date!");
+            } else if (month < 1 || month > 12) {
+                System.out.println("There is wrong month in date!");
+            } else if (dayOfMonth < 1 || dayOfMonth > 31) {
+                System.out.println("There is wrong day of month in date!");
+            } else if ((year % 4 == 0 && month == 2 && dayOfMonth > 29)
+                    || (year % 4 != 0 && month == 2 && dayOfMonth > 28)
+                    || (((month == 3 || month == 6 || month == 9 || month == 11) && dayOfMonth > 30))) {
+                System.out.println("There are wrong month and day of month in date!");
+            } else {
+                isCorrectDate = true;
+            }
         }
-        String paydate = scanner.nextLine();
         int receiver;
         do {
             System.out.println("Enter the number of the receiver (1-4):");
