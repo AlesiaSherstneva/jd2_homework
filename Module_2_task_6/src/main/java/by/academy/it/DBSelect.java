@@ -12,7 +12,7 @@ public class DBSelect {
         }
         Connection connection;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/it-academy", "root", "root");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ListExpenses", "root", "root");
             Statement statement = connection.createStatement();
             String query = "SELECT name, SUM(value) FROM expenses, receivers WHERE receiver=receivers.id GROUP BY name";
             ResultSet resultSet = statement.executeQuery(query);
