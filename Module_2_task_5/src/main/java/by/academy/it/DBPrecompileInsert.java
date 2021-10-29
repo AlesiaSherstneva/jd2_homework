@@ -59,7 +59,7 @@ public class DBPrecompileInsert {
         }
         Connection connection;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/it-academy", "root", "root");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ListExpenses", "root", "root");
             String template = "INSERT INTO expenses (paydate, receiver, value) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(template);
             preparedStatement.setString(1, paydate);
