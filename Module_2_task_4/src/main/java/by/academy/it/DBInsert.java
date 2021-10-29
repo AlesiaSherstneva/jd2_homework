@@ -59,7 +59,7 @@ public class DBInsert {
         }
         Connection connection;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/it-academy", "root", "root");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ListExpenses", "root", "root");
             Statement statement = connection.createStatement();
             String query = "INSERT INTO expenses (paydate, receiver, value) VALUES ('" +
                     paydate + "', " +
