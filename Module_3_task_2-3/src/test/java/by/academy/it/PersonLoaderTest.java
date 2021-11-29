@@ -40,7 +40,7 @@ public class PersonLoaderTest extends HibernateUtilTest {
     }
 
     @Test
-    public void loadPerson() {
+    public void loadPersonTest() {
         PersonLoader.savePerson(session, person);
 
         Person loadPerson = PersonLoader.loadPerson(session, person.getId());
@@ -51,7 +51,7 @@ public class PersonLoaderTest extends HibernateUtilTest {
     }
 
     @Test
-    public void deletePerson() {
+    public void deletePersonTest() {
         PersonLoader.savePerson(session, person);
         Long id = person.getId();
 
