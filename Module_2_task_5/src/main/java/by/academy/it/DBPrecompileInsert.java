@@ -66,7 +66,8 @@ public class DBPrecompileInsert {
             preparedStatement.setInt(2, receiver);
             preparedStatement.setBigDecimal(3, value);
             preparedStatement.executeUpdate();
-            template = "SELECT paydate, value, name FROM expenses, receivers WHERE receiver=receivers.id";
+            template = "SELECT e.paydate, e.value, r.name FROM expenses AS e " +
+                    "JOIN receivers as r ON e.receiver = r.id";
             ResultSet resultSet = preparedStatement.executeQuery(template);
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("paydate") + " "
