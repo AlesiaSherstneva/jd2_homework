@@ -14,25 +14,27 @@ public class DBSelect {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ListExpenses", "root", "root");
             Statement statement = connection.createStatement();
-            String query = "SELECT name, SUM(value) FROM expenses, receivers WHERE receiver=receivers.id GROUP BY name";
+            String query = "SELECT r.name, SUM(e.value) FROM expenses AS e " +
+                    "JOIN receivers as r ON e.receiver = r.id " +
+                    "GROUP BY r.name";
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 System.out.println(resultSet.getString(1) + " "
                         + resultSet.getString(2));
             }
             System.out.println();
-            query = "SELECT paydate, SUM(value) FROM expenses \n" +
-                    "WHERE paydate = (select paydate from expenses\n" +
-                    "WHERE value = (SELECT MAX(value) FROM expenses))";
+            query = "SELECT paydate, SUM(value) FROM expenses WHERE paydate = ( " +
+                    "SELECT paydate FROM expenses WHERE value = (" +
+                    "SELECT MAX(value) FROM expenses))";
             resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 System.out.println(resultSet.getString(1) + " "
                         + resultSet.getString(2));
             }
             System.out.println();
-            query = "SELECT MAX(value), paydate FROM expenses \n" +
-                    "WHERE paydate = (select paydate from expenses\n" +
-                    "WHERE value = (SELECT MAX(value) FROM expenses))";
+            query = "SELECT paydate, MAX(value) FROM expenses WHERE paydate = " +
+                    "(SELECT paydate FROM expenses GROUP BY paydate " +
+                    "ORDER BY SUM(value) DESC LIMIT 1)";
             resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 System.out.println(resultSet.getString(1) + " "
