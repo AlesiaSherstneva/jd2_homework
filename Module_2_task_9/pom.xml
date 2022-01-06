@@ -8,7 +8,7 @@
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>Module_2_task_9</name>
+    <name>VisitsCounter</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
