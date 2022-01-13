@@ -11,7 +11,7 @@
     <context:property-placeholder location="classpath:person-test.properties"/>
 
     <bean id="Address" class="by.academy.it.pojos.Address"
-          scope="singleton" init-method="addressInit" destroy-method="addressDestroy">
+          scope="prototype" init-method="addressInit" destroy-method="addressDestroy">
         <property name="country" value="${address.country}"/>
         <property name="city" value="${address.city}"/>
         <property name="street" value="${address.street}"/>
@@ -20,7 +20,7 @@
     </bean>
 
     <bean id="Person" class="by.academy.it.pojos.Person"
-          scope="prototype" factory-method="getPerson">
+          scope="singleton" factory-method="getPerson">
         <property name="name" value="${person.name}"/>
         <property name="surname" value="${person.surname}"/>
         <property name="age" value="${person.age}"/>

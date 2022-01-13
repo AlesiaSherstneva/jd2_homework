@@ -33,7 +33,10 @@ public class Address implements IAddress {
         System.out.println("Address is initializing");
     }
 
+    /* метод addressDestroy() не будет вызван, так как у бина Address scope = "prototype"
+       но добавляю его, так как это требуется по условию задания */
+
     public void addressDestroy() {
-        System.out.println("Person and Address were destroyed");
+        System.out.println("Address was destroyed");
     }
 }
