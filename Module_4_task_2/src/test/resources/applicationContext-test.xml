@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd"
+       default-init-method="personInit" default-destroy-method="personDestroy">
+
+    <context:property-placeholder location="classpath:person-test.properties"/>
+
+    <bean id="Address" class="by.academy.it.beans.Address"
+          scope="prototype" init-method="addressInit" destroy-method="addressDestroy">
+        <property name="country" value="${address.country}"/>
+        <property name="city" value="${address.city}"/>
+        <property name="street" value="${address.street}"/>
+        <property name="house" value="${address.house}"/>
+        <property name="apartment" value="${address.apartment}"/>
+    </bean>
+
+    <bean id="Person" class="by.academy.it.beans.Person"
+          scope="singleton" factory-method="getPerson">
+        <property name="name" value="${person.name}"/>
+        <property name="surname" value="${person.surname}"/>
+        <property name="age" value="${person.age}"/>
+        <property name="address" ref="Address"/>
+    </bean>
+</beans>
