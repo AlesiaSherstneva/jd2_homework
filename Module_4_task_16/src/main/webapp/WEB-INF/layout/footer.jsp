@@ -1,0 +1,1 @@
+<span style="align-content: center">This is footer!</span>
