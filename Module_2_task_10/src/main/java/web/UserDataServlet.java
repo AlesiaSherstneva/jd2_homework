@@ -1,12 +1,13 @@
 package web;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import java.io.*;
 
+@SuppressWarnings("RedundantThrows")
 public class UserDataServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -17,10 +18,10 @@ public class UserDataServlet extends HttpServlet {
         String email = request.getParameter("email");
         out.println("<html><head><title>User Data Servlet</title><head>");
         if (name.isEmpty()) {
-            out.println("<body><h1>You didn't enter the name!</h1>");
+            out.println("<body><h1>You haven't enter the name!</h1>");
             out.println("</body></html>");
         } else if (phone.isEmpty() && email.isEmpty()) {
-            out.println("<body><h1>You didn't enter your phone number and email!</h1>");
+            out.println("<body><h1>You haven't enter your phone number and email!</h1>");
             out.println("</body></html>");
         }
         else {
