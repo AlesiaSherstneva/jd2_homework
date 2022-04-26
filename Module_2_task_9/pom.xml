@@ -39,7 +39,7 @@
                 <version>2.2</version>
                 <executions>
                     <execution>
-                        <id>deployToTomcat10</id>
+                        <id>deployToTomcat9</id>
                         <phase>install</phase>
                         <goals>
                             <goal>undeploy</goal>
