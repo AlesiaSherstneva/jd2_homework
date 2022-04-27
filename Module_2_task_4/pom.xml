@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>by.academy.it</groupId>
-    <artifactId>Module_2_task_4</artifactId>
+    <artifactId>expences-counter</artifactId>
     <version>1.0</version>
 
     <name>DBInsert</name>
@@ -20,7 +20,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.25</version>
+            <version>8.0.28</version>
         </dependency>
     </dependencies>
 

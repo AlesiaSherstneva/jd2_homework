@@ -66,8 +66,7 @@ public class DBInsert {
                     receiver + ", " +
                     value + ")";
             statement.executeUpdate(query);
-            query = "SELECT e.paydate, e.value, r.name FROM expenses AS e " +
-                    "JOIN receivers as r on e.receiver=r.id";
+            query = "SELECT e.paydate, e.value, r.name FROM expenses AS e JOIN receivers as r on e.receiver=r.id";
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("paydate") + " "
