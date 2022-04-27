@@ -2,6 +2,7 @@ package by.academy.it;
 
 import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class DBInsert {
@@ -20,7 +21,7 @@ public class DBInsert {
             int year = Integer.parseInt(paydate.substring(0, 4));
             int month = Integer.parseInt(paydate.substring(5, 7));
             int dayOfMonth = Integer.parseInt(paydate.substring(8));
-            if (year < 2016 || year > 2021) {
+            if (year < LocalDateTime.now().getYear() - 100 || year > LocalDateTime.now().getYear()) {
                 System.out.println("There is wrong year in date!");
             } else if (month < 1 || month > 12) {
                 System.out.println("There is wrong month in date!");
@@ -51,7 +52,7 @@ public class DBInsert {
                 scanner.next();
             }
             value = BigDecimal.valueOf(scanner.nextDouble());
-        } while (value.signum() < 0);
+        } while (value.signum() < 0 || value.compareTo(new BigDecimal("9999999.99")) > 0);
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
