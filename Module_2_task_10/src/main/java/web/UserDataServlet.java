@@ -18,10 +18,10 @@ public class UserDataServlet extends HttpServlet {
         String email = request.getParameter("email");
         out.println("<html><head><title>User Data Servlet</title><head>");
         if (name.isEmpty()) {
-            out.println("<body><h1>You haven't enter the name!</h1>");
+            out.println("<body><h1>You didn't enter the name!</h1>");
             out.println("</body></html>");
         } else if (phone.isEmpty() && email.isEmpty()) {
-            out.println("<body><h1>You haven't enter your phone number and email!</h1>");
+            out.println("<body><h1>You didn't enter your phone number and email!</h1>");
             out.println("</body></html>");
         }
         else {
