@@ -25,7 +25,7 @@ public class DBSelect {
             System.out.println();
             query = "SELECT paydate, SUM(value) FROM expenses WHERE paydate = ( " +
                     "SELECT paydate FROM expenses WHERE value = (" +
-                    "SELECT MAX(value) FROM expenses))";
+                    "SELECT MAX(value) FROM expenses)) GROUP BY paydate ";
             resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 System.out.println(resultSet.getString(1) + " "
