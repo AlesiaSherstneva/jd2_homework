@@ -9,13 +9,6 @@ public class DBWithDAO {
 
         ExpRecDao dao = new ExpRecDao();
 
-        System.out.println("Getting one string from tables:");
-        Expense expense = dao.getExpense(7);
-        System.out.println(expense.getPaydate() + " " + expense.getReceiver() + " " + expense.getValue());
-        Receiver receiver = dao.getReceiver(2);
-        System.out.println(receiver.getName());
-
-
         System.out.println("\nAdding new strings in tables:");
         Receiver receiver1 = new Receiver();
         receiver1.setName("A1");
@@ -26,6 +19,11 @@ public class DBWithDAO {
         expense1.setValue(new BigDecimal("22.49"));
         System.out.println(dao.addExpense(expense1) + " rows added");
 
+        System.out.println("Getting one string from tables:");
+        Expense expense = dao.getExpense(1);
+        System.out.println(expense.getPaydate() + " " + expense.getReceiver() + " " + expense.getValue());
+        Receiver receiver = dao.getReceiver(2);
+        System.out.println(receiver.getName());
 
         System.out.println("\nReceiving all the strings from tables:");
         ArrayList<Expense> expenses = dao.getExpenses();
