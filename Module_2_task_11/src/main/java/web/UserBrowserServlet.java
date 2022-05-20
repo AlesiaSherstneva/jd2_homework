@@ -1,11 +1,11 @@
 package web;
 
 import eu.bitwalker.useragentutils.UserAgent;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import java.io.*;
 
@@ -14,10 +14,12 @@ public class UserBrowserServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     String browserName;
 
-    /* Оказывается, Google использует user-agent в своих целях, замедляет свои сервисы, если пользователь заходит
-    с браузера, отличного от Chrome. А Microsoft Edge и Opera с этим борются, маскируясь под Chrome в своих
-    user-agent. А я-то час билась, не могла понять, почему у меня все браузеры, кроме Firefox, определяются, как Chrome
-    :-) */
+    /* Оказалось, что Google использует user-agent в своих целях, замедляет свои сервисы, если пользователь заходит
+    с браузера, отличного от Chrome.
+    А Microsoft Edge и Opera с этим борются, маскируясь под Chrome в своих user-agent.
+    А я-то час билась, не могла понять, почему у меня все браузеры определяются, как Chrome :-)
+    Firefox и Internet Explorer определяются корректно.
+    Других браузеров у меня на ПК нет, поэтому их не проверяла */
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String info = request.getHeader("User-Agent");
