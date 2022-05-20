@@ -3,12 +3,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>Module_2_task_11</groupId>
-    <artifactId>Module_2_task_11</artifactId>
+    <groupId>browser-data</groupId>
+    <artifactId>browser-data</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>Module_2_task_11</name>
+    <name>browser-data</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,9 +18,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <version>5.0.0</version>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -31,6 +31,7 @@
     </dependencies>
 
     <build>
+        <finalName>browser-data</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -55,7 +56,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <warFile>target\Module_2_task_11-1.0.war</warFile>
+                    <warFile>target\browser-data.war</warFile>
                     <username>tomcat</username>
                     <password>tomcat</password>
                 </configuration>
