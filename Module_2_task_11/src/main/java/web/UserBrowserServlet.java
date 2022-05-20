@@ -18,7 +18,7 @@ public class UserBrowserServlet extends HttpServlet {
     с браузера, отличного от Chrome.
     А Microsoft Edge и Opera с этим борются, маскируясь под Chrome в своих user-agent.
     А я-то час билась, не могла понять, почему у меня все браузеры определяются, как Chrome :-)
-    Firefox и Internet Explorer определяются корректно.
+    Firefox и Internet Explorer определяются корректно без дополнительных проверок.
     Других браузеров у меня на ПК нет, поэтому их не проверяла */
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
