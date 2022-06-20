@@ -49,13 +49,13 @@ public class PersonLoader {
 
     public static Serializable savePerson(Session session, Person person) {
 
-        //System.out.println("New person created at: " + person.getTimestamp()); //return null
+        //System.out.println("New person created at: " + person.getTimestamp()); //returns null
         Serializable id = session.save(person);
-        //System.out.println("New person created at: " + person.getTimestamp()); //return current time
+        //System.out.println("New person created at: " + person.getTimestamp()); //returns current time
         //System.out.println(session.isDirty()); //return true
 
         session.flush();
-        //System.out.println("New person created at: " + person.getTimestamp()); //return current time
+        //System.out.println("New person created at: " + person.getTimestamp()); //returns current time
         //System.out.println(session.isDirty()); //return false
 
         session.refresh(person);
