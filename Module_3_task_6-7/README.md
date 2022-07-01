@@ -1,4 +1,6 @@
 ![img.png](img.png)
-Файл personProperties.jar в папке target. Запускается в командной строке командой java -jar personProperties.jar
-<br>
+
+<p>Файл personProperties.jar формируется в папке target при помощи Maven.<br>
+Запускается в командной строке командой java -jar personProperties.jar</p>
+
 ![img_1.png](img_1.png)
