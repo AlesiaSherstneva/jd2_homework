@@ -3,16 +3,18 @@ package by.academy.it;
 import java.sql.*;
 
 public class DBSelect {
+    static Connection connection;
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ListExpenses", "root", "root");
+        } catch (ClassNotFoundException | SQLException exception) {
+            exception.printStackTrace();
+        }
+    }
 
     public static void main(String[] args) {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        Connection connection;
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ListExpenses", "root", "root");
             Statement statement = connection.createStatement();
             String query = "SELECT r.name, SUM(e.value) FROM expenses AS e " +
                     "JOIN receivers as r ON e.receiver = r.id " +

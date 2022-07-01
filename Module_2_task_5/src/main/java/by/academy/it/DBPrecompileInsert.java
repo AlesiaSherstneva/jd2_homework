@@ -6,6 +6,15 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class DBPrecompileInsert {
+    static Connection connection;
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ListExpenses", "root", "root");
+        } catch (ClassNotFoundException | SQLException exception) {
+            exception.printStackTrace();
+        }
+    }
 
     public static void main(String[] args) {
         String paydate = "";
@@ -53,14 +62,8 @@ public class DBPrecompileInsert {
             }
             value = BigDecimal.valueOf(scanner.nextDouble());
         } while (value.signum() < 0 || value.compareTo(new BigDecimal("9999999.99")) > 0);
+
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        Connection connection;
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ListExpenses", "root", "root");
             String template = "INSERT INTO expenses (paydate, receiver, value) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(template);
             preparedStatement.setString(1, paydate);
