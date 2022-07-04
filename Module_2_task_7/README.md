@@ -1,2 +1,6 @@
 ![img.png](img.png)
-Файл DBWithDAO.jar в папке target. Запускается в командной строке командой java -jar DBWithDAO.jar
+
+<p>Файл DBWithDAO.jar формируется в папке target при помощи Maven.<br>
+Запускается в командной строке командой java -jar DBWithDAO.jar</p>
+
+![img_1.png](img_1.png)

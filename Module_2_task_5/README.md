@@ -1,2 +1,6 @@
 ![img.png](img.png)
-Файл DBPrecompileInsert.jar в папке target. Запускается в командной строке командой java -jar DBPrecompileInsert.jar
+
+<p>Файл DBPrecompileInsert.jar формируется в папке target при помощи Maven.<br>
+Запускается в командной строке командой java -jar DBPrecompileInsert.jar</p>
+
+![img_1.png](img_1.png)
