@@ -1,2 +1,6 @@
 ![img.png](img.png)
-Файл personManager.jar в папке target. Запускается в командной строке командой java -jar personManager.jar
+
+<p>Файл personManager.jar формируется в папке target при помощи Maven.<br>
+Запускается в командной строке командой java -jar personManager.jar</p>
+
+![img_1.png](img_1.png)
