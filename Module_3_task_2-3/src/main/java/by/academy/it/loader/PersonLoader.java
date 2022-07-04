@@ -39,7 +39,7 @@ public class PersonLoader {
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
         person = getPerson(session, person.getId());
-        System.out.println("Person which gotten with get() method:\n" + person.getName() + " "
+        System.out.println("The person who was got by get() method:\n" + person.getName() + " "
                 + person.getSurname() + " " + person.getAge() + " years old");
         System.out.println("Person id = " + person.getId());
         System.out.println("Trigger: person was created at " + person.getTimestamp());
@@ -47,16 +47,16 @@ public class PersonLoader {
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
         person = loadPerson(session, person.getId());
-        System.out.println("Person which gotten with load() method:\n" + person.getName() + " "
+        System.out.println("The person who was got by load() method:\n" + person.getName() + " "
                 + person.getSurname() + " " + person.getAge() + " years old");
         System.out.println("Person id = " + person.getId());
         System.out.println("Trigger: person was created at " + person.getTimestamp());
 
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         long id = deletePerson(session, person.getId());
-        System.out.println("Person with id = " + id + " was deleted successfully");
-        System.out.println("Person which gotten with get() method: " + getPerson(session, id));
-        System.out.println("Person which gotten with load() method: " + loadPerson(session, id));
+        System.out.println("The person with id = " + id + " was deleted successfully");
+        System.out.println("The person who was got by get() method: " + getPerson(session, id));
+        System.out.println("The person who was got by load() method: " + loadPerson(session, id));
 
         session.getTransaction().commit();
         session.close();
