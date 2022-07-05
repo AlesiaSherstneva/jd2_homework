@@ -3,7 +3,6 @@ package by.academy.it.beans;
 import by.academy.it.interfaces.IAddress;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -21,15 +20,13 @@ public class Person {
     @Value("${person.age}")
     private Integer age;
 
-    @Autowired
-    @Qualifier("homeAddress")
-    private IAddress firstAddress;
+    private final IAddress firstAddress;
 
-    @Autowired
-    @Qualifier("workAddress")
-    private IAddress secondAddress;
+    private final IAddress secondAddress;
 
-    private Person() {
+    private Person(@Qualifier("homeAddress") IAddress firstAddress, @Qualifier("workAddress") IAddress secondAddress) {
+        this.firstAddress = firstAddress;
+        this.secondAddress = secondAddress;
     }
 
     @Override
