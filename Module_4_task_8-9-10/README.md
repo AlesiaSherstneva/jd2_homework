@@ -1,3 +1,6 @@
 ![img.png](img.png)
-Файл springAnnotations.jar в папке target. Запускается в командной строке командой java -jar springAnnotations.jar
+
+<p>Файл springAnnotations.jar формируется в папке target при помощи Maven.<br>
+Запускается в командной строке командой java -jar springAnnotations.jar</p>
+
 ![img_1.png](img_1.png)
