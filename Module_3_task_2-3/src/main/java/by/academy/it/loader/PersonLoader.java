@@ -53,6 +53,7 @@ public class PersonLoader {
         System.out.println("Trigger: person was created at " + person.getTimestamp());
 
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
         long id = deletePerson(session, person.getId());
         System.out.println("The person with id = " + id + " was deleted successfully");
         System.out.println("The person who was got by get() method: " + getPerson(session, id));
