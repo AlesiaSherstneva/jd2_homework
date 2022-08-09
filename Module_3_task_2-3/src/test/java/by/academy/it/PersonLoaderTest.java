@@ -34,9 +34,9 @@ public class PersonLoaderTest extends HibernateUtilTest {
         
         Person gotPerson = PersonLoader.getPerson(session, person.getId());
 
-        assertEquals(gotPerson.getAge(), (Integer) 39);
-        assertEquals(gotPerson.getName(), "Alesia");
-        assertEquals(gotPerson.getSurname(), "Sherstneva");
+        assertEquals((Integer) 39, gotPerson.getAge());
+        assertEquals( "Alesia", gotPerson.getName());
+        assertEquals("Sherstneva", gotPerson.getSurname());
     }
 
     @Test
@@ -45,9 +45,9 @@ public class PersonLoaderTest extends HibernateUtilTest {
 
         Person loadPerson = PersonLoader.loadPerson(session, person.getId());
 
-        assertEquals(loadPerson.getAge(), (Integer) 39);
-        assertEquals(loadPerson.getName(), "Alesia");
-        assertEquals(loadPerson.getSurname(), "Sherstneva");
+        assertEquals((Integer) 39, loadPerson.getAge());
+        assertEquals("Alesia", loadPerson.getName());
+        assertEquals("Sherstneva", loadPerson.getSurname());
     }
 
     @Test

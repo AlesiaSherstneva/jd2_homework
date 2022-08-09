@@ -35,9 +35,9 @@ public class DataLoaderSingleTest extends HibernateUtilTest {
         EmployeeSingle employeeSingle = (EmployeeSingle) personList.get(2);
         StudentSingle studentSingle = (StudentSingle) personList.get(4);
 
-        assertEquals(personSingle.getAge(), (Integer) 67);
-        assertEquals(employeeSingle.getCompany(), "Belpochta");
-        assertEquals(studentSingle.getMark(), (Double) 6.92);
+        assertEquals((Integer) 67, personSingle.getAge());
+        assertEquals("Belpochta", employeeSingle.getCompany());
+        assertEquals((Double) 6.92, studentSingle.getMark());
     }
 
     @After

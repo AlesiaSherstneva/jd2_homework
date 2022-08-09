@@ -36,20 +36,20 @@ public class DataLoaderTest extends HibernateUtilTest {
         Person secondPerson = personList.get(1);
         Person thirdPerson = personList.get(2);
 
-        assertEquals(firstPerson.getName(), "Ivan");
-        assertEquals(firstPerson.getAddress().getPostalCode(), "220136");
-        assertEquals(firstPerson.getPets().size(), 2);
-        assertEquals(firstPerson.getBankAccounts().size(), 1);
+        assertEquals("Ivan", firstPerson.getName());
+        assertEquals("220136", firstPerson.getAddress().getPostalCode());
+        assertEquals(2, firstPerson.getPets().size() );
+        assertEquals(1, firstPerson.getBankAccounts().size() );
 
-        assertEquals(secondPerson.getSurname(), "Petrov");
-        assertEquals(secondPerson.getAddress().getStreet(), "Narodnaya");
-        assertEquals(secondPerson.getPets().size(), 0);
-        assertEquals(secondPerson.getBankAccounts().get(0).getNumber(), "5462587436954128");
+        assertEquals("Petrov", secondPerson.getSurname());
+        assertEquals("Narodnaya", secondPerson.getAddress().getStreet());
+        assertEquals(0, secondPerson.getPets().size());
+        assertEquals("5462587436954128", secondPerson.getBankAccounts().get(0).getNumber());
 
-        assertEquals(thirdPerson.getAge(), (Integer) 41);
+        assertEquals((Integer) 41, thirdPerson.getAge());
         assertNull(thirdPerson.getAddress());
-        assertEquals(thirdPerson.getPets().get(0).getAnimal(), "parrot");
-        assertEquals(thirdPerson.getBankAccounts().size(), 0);
+        assertEquals("parrot", thirdPerson.getPets().get(0).getAnimal() );
+        assertEquals(0, thirdPerson.getBankAccounts().size());
     }
 
     @After

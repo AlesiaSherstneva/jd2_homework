@@ -24,15 +24,15 @@ public class PersonTest {
         person = context.getBean("Person", Person.class);
         address = (Address) person.getAddress();
 
-        assertEquals(person.getName(), "testName");
-        assertEquals(person.getSurname(), "testSurname");
-        assertEquals(person.getAge(), (Integer) 1000);
+        assertEquals("testName", person.getName());
+        assertEquals("testSurname", person.getSurname());
+        assertEquals((Integer) 1000, person.getAge());
 
-        assertEquals(address.getCountry(), "testCountry");
-        assertEquals(address.getCity(), "testCity");
-        assertEquals(address.getStreet(), "testStreet");
-        assertEquals(address.getHouse(), (Integer) 0);
-        assertEquals(address.getApartment(), (Integer) 0);
+        assertEquals("testCountry", address.getCountry());
+        assertEquals("testCity", address.getCity());
+        assertEquals("testStreet", address.getStreet());
+        assertEquals((Integer) 0, address.getHouse());
+        assertEquals((Integer) 0, address.getApartment());
     }
 
     @After

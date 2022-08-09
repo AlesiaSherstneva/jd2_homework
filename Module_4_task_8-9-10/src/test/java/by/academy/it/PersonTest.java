@@ -47,7 +47,7 @@ public class PersonTest {
             secondPerson = context.getBean("anotherPerson", AnotherPerson.class);
             fail("Expected NoSuchBeanDefinitionException");
         } catch (NoSuchBeanDefinitionException exception) {
-            assertEquals(exception.getMessage(), "No bean named 'anotherPerson' available");
+            assertEquals("No bean named 'anotherPerson' available", exception.getMessage());
         }
     }
 

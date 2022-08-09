@@ -35,9 +35,9 @@ public class DataLoaderPerClassTest extends HibernateUtilTest {
         EmployeePerClass employeePerClass = (EmployeePerClass) personList.get(3);
         StudentPerClass studentPerClass = (StudentPerClass) personList.get(4);
 
-        assertEquals(personPerClass.getSurname(), "Smirnova");
-        assertEquals(employeePerClass.getCompany(), "Beltelecom");
-        assertEquals(studentPerClass.getAge(), (Integer) 20);
+        assertEquals("Smirnova", personPerClass.getSurname());
+        assertEquals("Beltelecom", employeePerClass.getCompany());
+        assertEquals((Integer) 20, studentPerClass.getAge());
     }
 
     @After
