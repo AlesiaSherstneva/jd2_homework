@@ -15,7 +15,7 @@ public class PersonTest {
     ClassPathXmlApplicationContext context;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         context = new ClassPathXmlApplicationContext("applicationContext-test.xml");
     }
 
@@ -36,7 +36,7 @@ public class PersonTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         context.close();
     }
 }

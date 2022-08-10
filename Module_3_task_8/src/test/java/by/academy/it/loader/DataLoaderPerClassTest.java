@@ -18,7 +18,7 @@ public class DataLoaderPerClassTest extends HibernateUtilTest {
     Session session;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         dataLoaderPerClass.loadData(sessionFactory);
         session = sessionFactory.openSession();
         session.beginTransaction();
@@ -41,7 +41,7 @@ public class DataLoaderPerClassTest extends HibernateUtilTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         session.getTransaction().commit();
         session.close();
     }

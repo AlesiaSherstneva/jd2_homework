@@ -18,7 +18,7 @@ public class PersonLoaderTest extends HibernateUtilTest {
     Session session = sessionFactory.openSession();
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         session.beginTransaction();
     }
 
@@ -62,7 +62,7 @@ public class PersonLoaderTest extends HibernateUtilTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         session.getTransaction().commit();
         session.close();
     }
